@@ -322,7 +322,7 @@ public class FS {
     }
 
     // Remove / Rename / Link
-    /** Remove/Unlink same operation. drop one name, free the file when the last name goes. */
+    /* Remove/Unlink same operation. drop one name, free the file when the last name goes. */
     void remove(String name) {
         if (!needFormatted()) return;
         int f = findName(name);
