@@ -4,15 +4,15 @@
 // decided to find prexisting examples for a refererence so I'm not stuck looking at documentation
 
 #define _DEFAULT_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> //standard
+#include <stdlib.h> 
 #include <string.h>
-#include <unistd.h>
+#include <unistd.h> //inside references plus lets things work
 #include <limits.h>
 #include <ctype.h>
-#include <time.h>
+#include <time.h> 
 #include <dirent.h>
-#include <sys/stat.h>
+#include <sys/stat.h> //reason I had to use codespaces not windows
 
 #ifndef NAME_MAX
 #define NAME_MAX 255
@@ -20,7 +20,7 @@
 #ifndef PATH_MAX
 #define PATH_MAX 4096
 #endif
-
+//LIMITS FOR THE RESTRICTIONS
 #define MAX_ENTRIES 1024
 #define PAGE_SIZE   10
 #define INPUT_LEN   4096
@@ -219,7 +219,7 @@ static int select_entry(const char *arg, int kind)
 }
 
 //COMMANDS
-
+//individal functions
 static void do_display(char *arg)
 {
     int i = select_entry(arg, ANY);
@@ -324,7 +324,7 @@ static void do_remove(char *arg)
     load_dir();                              //refresh
 }
 
-
+//Classic put every function outside main and use sqitch
 int main(int argc, char **argv)
 {
     if (argc > 1 && chdir(argv[1]) != 0) {
